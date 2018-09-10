@@ -4,6 +4,8 @@
     Author     : mrm96
 --%>
 
+<%@page import="modelo.Item"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,6 +14,14 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Carrito</h1>
+        <% if(session.getAttribute("carrito")!= null){
+            ArrayList<Item> listaItems = (ArrayList<Item>)session.getAttribute("carrito"); 
+            for (int i = 0; i < listaItems.size(); i++) {%>
+                <div style="border: 1px solid black;">
+                    <h1><%=listaItems.get(i).getProducto().getNombre()%></h1>
+                </div>
+            <% } %>
+        <% } %>
     </body>
 </html>

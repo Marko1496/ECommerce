@@ -66,13 +66,15 @@ public class Carrito extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession sesion = request.getSession();
         if(request.getParameter("ordenar") != null){
+            
             int id_producto = Integer.parseInt(request.getParameter("producto"));
             if(request.getParameter("tamano") != null){
                 int id_tamano = Integer.parseInt(request.getParameter("tamano"));
                 Producto p;
-                HttpSession sesion = request.getSession();
                 if(sesion.getAttribute("carrito") == null){
+                    sesion.setAttribute("hola", "hola");
                     ArrayList<Item> carrito = new ArrayList<>();
                     p = ProductoCad.consultarProductoConTamano(id_producto, id_tamano);
                     carrito.add(new Item(p, 1));
