@@ -16,12 +16,23 @@
     <body>
         <h1>Carrito</h1>
         <% if(session.getAttribute("carrito")!= null){
+            int subTotal = 0;
+            double impuestos = 0;
+            double total = 0;
             ArrayList<Item> listaItems = (ArrayList<Item>)session.getAttribute("carrito"); 
-            for (int i = 0; i < listaItems.size(); i++) {%>
+            for (int i = 0; i < listaItems.size(); i++){
+                subTotal = subTotal+listaItems.get(i).getProducto().getPrecio()*listaItems.get(i).getCantidad();%>
                 <div style="border: 1px solid black;">
                     <h1><%=listaItems.get(i).getProducto().getNombre()%></h1>
+                    <h3>Precio: <%=listaItems.get(i).getProducto().getPrecio()*listaItems.get(i).getCantidad()%></h3>
+                    <input type="number" value="<%=listaItems.get(i).getCantidad()%>" />
                 </div>
-            <% } %>
+            <% } 
+            impuestos = subTotal*0.13;
+            total = subTotal+impuestos;%>
+            <h4>Subtotal: <%=subTotal%></h4>
+            <h4>IVA (%13): <%=impuestos%></h4>
+            <h3>Total: <%=total%></h3>
         <% } %>
     </body>
 </html>

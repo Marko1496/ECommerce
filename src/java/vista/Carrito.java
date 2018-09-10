@@ -74,7 +74,6 @@ public class Carrito extends HttpServlet {
                 int id_tamano = Integer.parseInt(request.getParameter("tamano"));
                 Producto p;
                 if(sesion.getAttribute("carrito") == null){
-                    sesion.setAttribute("hola", "hola");
                     ArrayList<Item> carrito = new ArrayList<>();
                     p = ProductoCad.consultarProductoConTamano(id_producto, id_tamano);
                     carrito.add(new Item(p, 1));
@@ -83,6 +82,21 @@ public class Carrito extends HttpServlet {
                 else{
                     ArrayList<Item> carrito = (ArrayList<Item>)sesion.getAttribute("carrito");
                     p = ProductoCad.consultarProductoConTamano(id_producto, id_tamano);
+                    carrito.add(new Item(p, 1));
+                    sesion.setAttribute("carrito", carrito);
+                }
+            }
+            else{
+                Producto p;
+                if(sesion.getAttribute("carrito") == null){
+                    ArrayList<Item> carrito = new ArrayList<>();
+                    p = ProductoCad.consultarProductoSinTamano(id_producto);
+                    carrito.add(new Item(p, 1));
+                    sesion.setAttribute("carrito", carrito);
+                }
+                else{
+                    ArrayList<Item> carrito = (ArrayList<Item>)sesion.getAttribute("carrito");
+                    p = ProductoCad.consultarProductoSinTamano(id_producto);
                     carrito.add(new Item(p, 1));
                     sesion.setAttribute("carrito", carrito);
                 }

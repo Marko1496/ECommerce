@@ -81,4 +81,27 @@ public class ProductoCad {
             return null;
         }
     }
+    
+    public static Producto consultarProductoSinTamano (int producto){
+        try {
+            String sql="{call sp_consultarProductoSinTamano(?)}";
+            Connection c = Conexion.conectar();
+            CallableStatement sentencia = (CallableStatement) c.prepareCall(sql);
+            sentencia.setInt(1, producto);
+            ResultSet resultado = sentencia.executeQuery();
+            Producto prod=null;
+            if(resultado.next()){
+                prod = new Producto();
+                prod.setId_producto(resultado.getInt("id_producto"));
+                prod.setNombre(resultado.getString("nombre"));
+                prod.setCategoria(resultado.getInt("categoria"));
+                prod.setPrecio(resultado.getInt("precio"));
+                prod.setImagen(resultado.getString("imagen"));
+                prod.setDescripcion(resultado.getString("descripcion"));
+            }
+            return prod;
+        } catch (SQLException ex) {
+            return null;
+        }
+    }
 }
