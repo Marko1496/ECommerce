@@ -12,11 +12,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <%@include file="css.jsp" %>
+        <%@include file="css.jsp"%>
     </head>
     <body>
+        <%@include file="header.jsp"%>
 
-        <div class="wrapper">
+        <div class="section">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
@@ -75,13 +76,15 @@
                         
                         
                         <% } else { %>
-                        <div style="border: 1px solid black;">
-                            <h1 class="text-primary">No has agregado ningun producto al carrito</h1>
+                        <div>
+                            <h1 class="text-danger">No has agregado ningun producto al carrito</h1>
+                            <a class="btn btn-round btn-info" href="Inicio">Seguir Comprando</a>
                         </div>
                         <%  } %>
                         <% } else { %>
-                        <div style="border: 1px solid black;">
-                            <h1 class="text-primary">No has agregado ningun producto al carrito</h1>
+                        <div>
+                            <h1 class="text-danger">No has agregado ningun producto al carrito</h1>
+                            <a class="btn btn-round btn-info" href="Inicio">Seguir Comprando</a>
                         </div>
                         <% }%>
                     </div>
