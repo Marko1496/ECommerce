@@ -21,7 +21,7 @@
                     <div class="row">
                         <div class="col-lg-6 ml-auto mr-auto">
                             <div class="card card-register bg-transparent ml-auto mr-auto">
-                                <h3 class="title">BIenvenido</h3>
+                                <h3 class="title">Bienvenido</h3>
                                 <form action="cliente"  method="post" class="register-form">
                                     <div class="row">
                                         <div class="col-md-6">
