@@ -61,10 +61,11 @@
                                 <h4 id="precio-<%=i%>-label" class="card-title"></h4>
 
                                 <div class="card-footer text-center">
-                                    <% if (ProductoCad.tieneTamanos(id_producto)) {
-                                            ArrayList<Tamano> listaTamanos = TamanoCad.listarTamanosPorProductos(id_producto);%>
                                     <form method="POST" action="Carrito">
                                         <input type="hidden" name="producto" value="<%= id_producto%>" />
+                                    <% if (ProductoCad.tieneTamanos(id_producto)) {
+                                            ArrayList<Tamano> listaTamanos = TamanoCad.listarTamanosPorProductos(id_producto);%>
+                                        
                                         <select class="btn btn-outline-neutral btn-round dropdown-toggle precio-input" id="precio-<%=i%>" name="tamano" label="precio-<%=i%>-label">
                                             <% for (int j = 0; j < listaTamanos.size(); j++) {%>
                                             <option class="dropdown-item" precio="<%= listaTamanos.get(j).getPrecio()%>" value="<%= listaTamanos.get(j).getId_tamano()%>">
@@ -75,7 +76,7 @@
                                         <% } else {%>
                                         <input name="precio" type="hidden" id="precio" label="precio-<%=i%>-label" class="precio-input" precio="<%= lista.get(i).getPrecio()%>" value="<%= lista.get(i).getPrecio()%>" />
                                         <% }%>
-                                        <button type="submit" class="btn btn-outline-neutral btn-round"name="ordenar" value="Agregar">Ordenar <i class="nc-icon nc-cart-simple"></i></button>
+                                        <button type="submit" class="btn btn-outline-neutral btn-round" name="ordenar" value="Agregar">Ordenar <i class="nc-icon nc-cart-simple"></i></button>
                                     </form>
                                 </div>
                             </div>

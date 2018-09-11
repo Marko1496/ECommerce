@@ -87,7 +87,7 @@ public class Carrito extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession sesion = request.getSession();
-        if(request.getParameter("ordenar") != null){            
+        if(request.getParameter("ordenar") != null){
             int id_producto = Integer.parseInt(request.getParameter("producto"));
             if(request.getParameter("tamano") != null){
                 int id_tamano = Integer.parseInt(request.getParameter("tamano"));
