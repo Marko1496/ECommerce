@@ -5,11 +5,13 @@
  */
 package modelo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author mrm96
  */
-public class Factura {
+public class Factura implements Serializable{
     private int id_factura;
     private String nombre;
     private double total;

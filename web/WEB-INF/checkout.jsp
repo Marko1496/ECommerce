@@ -64,25 +64,25 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <label class="text-white">Nombre en la Tarjeta</label>
-                                <input class="form-control" type="text" name="nombre" />
+                                <input class="form-control" type="text" name="nombre" <% if(session.getAttribute("cliente") != null){%> value="${sessionScope.cliente.getNombre()}" <%}%>/>
                             </div>
                             <div class="col-md-3">
                                 <label class="text-white">Numero de Tarjeta</label>
-                                <input class="form-control" type="text" name="numero_tarjeta" />
+                                <input class="form-control" type="text" name="numero_tarjeta" <% if(session.getAttribute("cliente") != null){%> value="${sessionScope.cliente.getNumero_tarjeta()}" <%}%>/>
                             </div>
                             <div class="col-md-3">
                                 <label class="text-white">Codigo de Seguridad</label>
-                                <input class="form-control" type="text" name="codigo_seguridad" />
+                                <input class="form-control" type="text" name="codigo_seguridad" <% if(session.getAttribute("cliente") != null){%> value="${sessionScope.cliente.getCodigo_seguridad()}" <%}%>/>
                             </div>
                             <div class="col-md-3">
                                 <label class="text-white">Fecha de Vencimiento</label>
-                                <input class="form-control" type="text" name="fecha_vencimiento" />
+                                <input class="form-control" type="text" name="fecha_vencimiento" <% if(session.getAttribute("cliente") != null){%> value="${sessionScope.cliente.getFecha_vencimiento()}" <%}%>/>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8">
                                 <label class="text-white">Direccion</label>
-                                <input class="form-control" type="text" name="direccion" />
+                                <input class="form-control" type="text" name="direccion" <% if(session.getAttribute("cliente") != null){%> value="${sessionScope.cliente.getDireccion()}" <%}%>/>
                             </div>
                         </div>
                         <div class="row">

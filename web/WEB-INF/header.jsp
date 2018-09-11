@@ -22,7 +22,11 @@
                 </li>
 
                 <li class="nav-item">
+                    <% if(session.getAttribute("cliente") != null){%>
+                    <a class="nav-link">${sessionScope.cliente.getNombre()}</a>
+                    <% }else{%>
                     <a data-toggle="modal" data-target="#myModal" class="nav-link"><i class="nc-icon nc-single-02"></i></a>
+                    <%}%>
                 </li>
             </ul>
         </div>
@@ -41,7 +45,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form id="ingresar" method="POST" action="SesionCliente">
                     <div class="row">
                         <div class="col-md-12">
                             <label>Correo</label>
@@ -55,7 +59,13 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <a href="Cliente" class="nav-link"><i class="nc-icon nc-cart-simple"></i>Registrarse</a>
+                <div class="left-side">
+                    <a href="Cliente" class="btn btn-default btn-link">Registrarse</a>
+                </div>
+                <div class="divider"></div>
+                <div class="right-side">
+                    <input type="submit" name="ingresar" form="ingresar" class="btn btn-default btn-link" value="Ingresar"/>
+                </div>
             </div>
         </div>
     </div>
