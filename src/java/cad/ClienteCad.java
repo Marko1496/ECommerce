@@ -5,8 +5,10 @@
  */
 package cad;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import modelo.Clientes;
 
@@ -40,6 +42,34 @@ public class ClienteCad {
             return false;
         }
         return true;
+    }
+    
+    public static Clientes consultarProductoConTamano (String contrasena, String correo){
+        try {
+            String sql="{call sp_consultarClienteEspecifico(?,?)}";
+            Connection c = Conexion.conectar();
+            CallableStatement sentencia = (CallableStatement) c.prepareCall(sql);
+            sentencia.setString(1, contrasena);
+            sentencia.setString(2, correo);
+            ResultSet resultado = sentencia.executeQuery();
+            Clientes cliente=null;
+            if(resultado.next()){
+                cliente = new Clientes();
+                cliente.setId_cliente(resultado.getInt("id_cliente"));
+                cliente.setNombre(resultado.getString("nombre"));
+                cliente.setApellido(resultado.getString("apellido"));
+                cliente.setTelefono(resultado.getInt("telefono"));
+                cliente.setCorreo(resultado.getString("correo"));
+                cliente.setDireccion(resultado.getString("direccion"));
+                cliente.setFecha_vencimiento(resultado.getString("fecha_vencimiento"));
+                cliente.setCodigo_seguridad(resultado.getInt("codigo_seguridad"));
+                cliente.setNumero_tarjeta(resultado.getString("numero_tarjeta"));
+                cliente.setContrasena(resultado.getString("contrasena"));
+            }
+            return cliente;
+        } catch (SQLException ex) {
+            return null;
+        }
     }
     
 }

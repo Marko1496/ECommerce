@@ -28,6 +28,10 @@
         <servlet-name>Cliente</servlet-name>
         <servlet-class>vista.Cliente</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SesionCliente</servlet-name>
+        <servlet-class>vista.SesionCliente</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Inicio</servlet-name>
         <url-pattern>/Inicio</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>Cliente</servlet-name>
         <url-pattern>/Cliente</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SesionCliente</servlet-name>
+        <url-pattern>/SesionCliente</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
