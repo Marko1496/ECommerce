@@ -12,42 +12,84 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <%@include file="css.jsp" %>
     </head>
     <body>
-        <%@include file="header.jsp" %>
-        <h1>Carrito</h1>
-        <% if(session.getAttribute("carrito")!= null){
-            int subTotal = 0;
-            double impuestos = 0;
-            double total = 0;
-            ArrayList<Item> listaItems = (ArrayList<Item>)session.getAttribute("carrito");
-            if(listaItems.size() > 0){
-                for (int i = 0; i < listaItems.size(); i++){
-                subTotal = subTotal+listaItems.get(i).getProducto().getPrecio()*listaItems.get(i).getCantidad();%>
-                <div style="border: 1px solid black;">
-                    <h1><%=listaItems.get(i).getProducto().getNombre()%></h1>
-                    <label>Cantidad: </label>
-                    <input type="number" value="<%=listaItems.get(i).getCantidad()%>" />
-                    <h3>Precio: ₡<%=listaItems.get(i).getProducto().getPrecio()*listaItems.get(i).getCantidad()%></h3>
-                    <a href="?accion=borrar&id_producto=<%=listaItems.get(i).getProducto().getId_producto()%>&id_tamano=<%=listaItems.get(i).getTamano()%>">Borrar</a>
+
+        <div class="wrapper">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h1 class="text-info"><i class="nc-icon nc-cart-simple"></i>Carrito</h1>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Imagen</th>
+                                        <th class="text-center">Poducto</th>
+                                        <th class="text-center">Cantidad</th>
+                                        <th class="text-center">Precio</th>
+                                        <th class="text-center">Acción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if (session.getAttribute("carrito") != null) {
+                                            int subTotal = 0;
+                                            double impuestos = 0;
+                                            double total = 0;
+                                            ArrayList<Item> listaItems = (ArrayList<Item>) session.getAttribute("carrito");
+                                            if (listaItems.size() > 0) {
+                                                for (int i = 0; i < listaItems.size(); i++) {
+                                                    subTotal = subTotal + listaItems.get(i).getProducto().getPrecio() * listaItems.get(i).getCantidad();%>
+                                    <tr>
+                                        <td>
+                                            <div class="card-avatar">
+                                                <a><img class="img-thumbnail" style="width:50px; height:50px" src="assets/img/pizzas/<%=listaItems.get(i).getProducto().getImagen()%>" alt="..."></a>
+                                            </div>
+                                        </td>
+                                        <td class="text-center"><h4 class="text-primary"><%=listaItems.get(i).getProducto().getNombre()%></h4></td>
+                                        <td class="text-center"><input class="form-control" type="number" value="<%=listaItems.get(i).getCantidad()%>" /></td>
+                                        <td class="text-center"><h3>Precio: ₡<%=listaItems.get(i).getProducto().getPrecio() * listaItems.get(i).getCantidad()%></h3></td>
+                                        <td class="text-center"><a class="btn btn-icon btn-danger" href="?accion=borrar&id_producto=<%=listaItems.get(i).getProducto().getId_producto()%>&id_tamano=<%=listaItems.get(i).getTamano()%>"><i class="nc-icon nc-simple-remove "></i> Borrar</a></td>
+                                    </tr>
+                                    <% }%>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <%impuestos = subTotal * 0.13;
+                        total = subTotal + impuestos;%>
+                        <div class="row">
+                            <div class="col align-self-start"></div>
+                            <div class="col align-self-center"></div>
+                            <div class="col align-self-end">
+                            <h4 class="text-primary">Subtotal:<span class="text-muted"> ₡<%=subTotal%></span></h4>
+                        <h4 class="text-primary">IVA (%13):<span class="text-muted"> ₡<%=impuestos%></span></h4>
+                        <h3 class="text-primary">Total:<span class="text-muted"> ₡<%=total%></span></h3>
+                        <a class="btn btn-round btn-info" href="Inicio">Seguir Comprando</a>
+                        <a class="btn btn-round btn-info" href="Checkout">Pagar</a>
+                        </div>
+                        </div>
+                        
+                        
+                        <% } else { %>
+                        <div style="border: 1px solid black;">
+                            <h1 class="text-primary">No has agregado ningun producto al carrito</h1>
+                        </div>
+                        <%  } %>
+                        <% } else { %>
+                        <div style="border: 1px solid black;">
+                            <h1 class="text-primary">No has agregado ningun producto al carrito</h1>
+                        </div>
+                        <% }%>
+                    </div>
+
                 </div>
-            <% } 
-            impuestos = subTotal*0.13;
-            total = subTotal+impuestos;%>
-            <h4>Subtotal: ₡<%=subTotal%></h4>
-            <h4>IVA (%13): ₡<%=impuestos%></h4>
-            <h3>Total: ₡<%=total%></h3>
-            <a href="Inicio">Seguir Comprando</a>
-            <a href="Checkout">Pagar</a>
-            <% }else { %>
-            <div style="border: 1px solid black;">
-                <h1>No has agregado ningun producto al carrito</h1>
             </div>
-            <%  } %>
-        <% } else { %>
-            <div style="border: 1px solid black;">
-                <h1>No has agregado ningun producto al carrito</h1>
-            </div>
-        <% } %>
+        </div>
+
     </body>
+    <%@include file="js.jsp" %>
 </html>
