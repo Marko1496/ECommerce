@@ -1,17 +1,17 @@
-<%-- 
-    Document   : js
-    Created on : 09/09/2018, 02:44:35 PM
-    Author     : mrm96
---%>
+  <script src="assets/js/jquery-3.2.1.js" type="text/javascript"></script>
+  <script src="assets/js/jquery-ui-1.12.1.custom.min.js" type="text/javascript"></script>
+  <script src="assets/js/popper.js" type="text/javascript"></script>
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+  <!-- Switches -->
+  <script src="assets/js/bootstrap-switch.min.js"></script>
+
+  <!--  Plugins for Slider -->
+  <script src="assets/js/nouislider.js"></script>
+
+  <!--  Plugins for DateTimePicker -->
+  <script src="assets/js/moment.min.js"></script>
+  <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+
+  <!--  Paper Kit Initialization snd functons -->
+  <script src="assets/js/paper-kit.js?v=2.1.0"></script>

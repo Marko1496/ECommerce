@@ -15,53 +15,93 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>PIZZERIA</title>
+        <%@include file="css.jsp" %>
     </head>
     <body>
         <%@include file="header.jsp" %>
-        <h1>${sessionScope.pagina}</h1>
-        <% ArrayList<Producto> lista = ProductoCad.listarProductos(session.getAttribute("cat_prod").toString()); %>
-        <% for (int i = 0; i < lista.size(); i++) {
-            int id_producto = lista.get(i).getId_producto();%>
-            <form method="POST" action="Carrito">
-                <div style="border: 1px solid black;">
-                    <input type="hidden" name="producto" value="<%= id_producto %>" />
-                    <h1>
-                        <%= lista.get(i).getNombre() %>
-                    </h1>
-                    <img src="images/<%= lista.get(i).getImagen()%>"/>
-                        <p id="precio-<%=i%>-label">Precio</p>
-                        <% if(ProductoCad.tieneTamanos(id_producto)) {
-                            ArrayList<Tamano> listaTamanos = TamanoCad.listarTamanosPorProductos(id_producto);%>
-                            <select id="precio-<%=i%>" name="tamano" label="precio-<%=i%>-label" class="precio-input">
-                                <% for (int j = 0; j < listaTamanos.size(); j++) { %>
-                                <option precio="<%= listaTamanos.get(j).getPrecio() %>" value="<%= listaTamanos.get(j).getId_tamano() %>">
-                                    <%= listaTamanos.get(j).getNombre() %>
-                                </option>
-                                <% } %>
-                            </select>
-                            <% } else { %>
-                            <input name="precio" type="hidden" id="precio" label="precio-<%=i%>-label" class="precio-input" precio="<%= lista.get(i).getPrecio() %>" value="<%= lista.get(i).getPrecio() %>" />
-                            <% } %>
-                            <input type="submit" name="ordenar" value="Agregar"/>
+
+        <div class="wrapper">
+            <!-- content come here     -->
+            <div class="section section-dark text-center">
+                <div class="container">
+                    <% if (session.getAttribute("cat_prod").toString() == "1") {%>
+
+                    <h2 class="title">Nuestras Creaciones</h2> 
+                    <%} else {%>
+                    <h2 class="title">El mejor Acompañante</h2>
+                    <% }%>      
+                    <div class="row">
+                        <% ArrayList<Producto> lista = ProductoCad.listarProductos(session.getAttribute("cat_prod").toString()); %>
+                        <% for (int i = 0; i < lista.size(); i++) {
+                                int id_producto = lista.get(i).getId_producto();%>
+                        <div class="col-md-4">
+                            <div class="card card-profile card-plain">
+                                <% if (session.getAttribute("cat_prod").toString() == "1") {%>
+                                <div class="card-avatar">
+                                    <a href="#avatar"><img src="assets/img/pizzas/<%= lista.get(i).getImagen()%>" alt="..."></a>
+                                </div>
+                                <% } else {%> 
+                                <a href="#avatar"><img class="img-thumbnail" style="width:150px; height:150px" src="assets/img/pizzas/<%= lista.get(i).getImagen()%>" alt="..."></a>
+                                <% }%> 
+                                <div class="card-body">
+                                    <a>
+                                        <div class="author">
+                                            <h4 class="card-title"><%=lista.get(i).getNombre()%></h4>
+                                            <% if (session.getAttribute("cat_prod").toString() == "1") {%>
+                                            <h6 class="card-category">Ingredientes</h6>
+                                            <% }%> 
+                                        </div>
+                                    </a>
+                                    <% if (session.getAttribute("cat_prod").toString() == "1") {%>
+                                    <p class="card-description text-center">
+                                        <%=lista.get(i).getDescripcion()%>
+                                    </p>
+                                    <% }%> 
+                                </div>
+                                <h4 id="precio-<%=i%>-label" class="card-title"></h4>
+
+                                <div class="card-footer text-center">
+                                    <% if (ProductoCad.tieneTamanos(id_producto)) {
+                                            ArrayList<Tamano> listaTamanos = TamanoCad.listarTamanosPorProductos(id_producto);%>
+                                    <form method="POST" action="Carrito">
+                                        <input type="hidden" name="producto" value="<%= id_producto%>" />
+                                        <select class="btn btn-outline-neutral btn-round dropdown-toggle precio-input" id="precio-<%=i%>" name="tamano" label="precio-<%=i%>-label">
+                                            <% for (int j = 0; j < listaTamanos.size(); j++) {%>
+                                            <option class="dropdown-item" precio="<%= listaTamanos.get(j).getPrecio()%>" value="<%= listaTamanos.get(j).getId_tamano()%>">
+                                                <%= listaTamanos.get(j).getNombre()%>
+                                            </option>
+                                            <% } %>
+                                        </select>
+                                        <% } else {%>
+                                        <input name="precio" type="hidden" id="precio" label="precio-<%=i%>-label" class="precio-input" precio="<%= lista.get(i).getPrecio()%>" value="<%= lista.get(i).getPrecio()%>" />
+                                        <% }%>
+                                        <button type="submit" class="btn btn-outline-neutral btn-round"name="ordenar" value="Agregar">Ordenar <i class="nc-icon nc-cart-simple"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <% }%>
+                    </div>
                 </div>
-            </form>
-        <% } %>
+            </div>
+        </div>
+        <%@include file="footer.jsp" %>
     </body>
+    <%@include file="js.jsp" %>
     <script type="text/javascript">
-        (function(){
+        (function () {
             var inputs = document.getElementsByClassName("precio-input");
             for (var i = 0; i < inputs.length; i++) {
                 console.log(inputs[i].getAttribute("label"));
                 var label = document.getElementById(inputs[i].getAttribute("label"));
-                if(inputs[i].nodeName === "SELECT"){
-                    label.innerHTML = "₡ "+inputs[i].options[inputs[i].selectedIndex].getAttribute("precio");
-                    inputs[i].onchange = function (){
-                        label.innerHTML = "₡ "+this.options[this.selectedIndex].getAttribute("precio");
+                if (inputs[i].nodeName === "SELECT") {
+                    label.innerHTML = "Precio: ₡ " + inputs[i].options[inputs[i].selectedIndex].getAttribute("precio");
+                    inputs[i].onchange = function () {
+                        label.innerHTML = "Precio: ₡ " + this.options[this.selectedIndex].getAttribute("precio");
                     };
-                }else {
-                    label.innerHTML = "₡ "+inputs[i].getAttribute("precio");
+                } else {
+                    label.innerHTML = "Precio: ₡ " + inputs[i].getAttribute("precio");
                 }
-
             }
         })();
     </script>
