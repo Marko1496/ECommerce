@@ -15,14 +15,14 @@
                     <a href="Pizzas" class="nav-link"><i class="nc-icon nc-chart-pie-36"></i>Pizzas</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Bebidas" target="_blank" class="nav-link"><i class="fa fa-beer"></i>Bebidas</a>
+                    <a href="Bebidas" class="nav-link"><i class="fa fa-beer"></i>Bebidas</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Carrito" target="_blank" class="nav-link"><i class="nc-icon nc-cart-simple"></i></a>
+                    <a href="Carrito" class="nav-link"><i class="nc-icon nc-cart-simple"></i></a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="Cliente" target="_blank" class="nav-link"><i class="nc-icon nc-single-02"></i></a>
+                    <a href="Cliente" class="nav-link"><i class="nc-icon nc-single-02"></i></a>
                 </li>
             </ul>
         </div>

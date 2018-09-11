@@ -36,7 +36,6 @@ public class Carrito extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession sesion = request.getSession();
-        sesion.setAttribute("pagina", "Carrito");
         
         if(request.getParameter("accion") != null){
             String a = request.getParameter("accion");

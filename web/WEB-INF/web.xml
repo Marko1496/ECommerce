@@ -24,6 +24,10 @@
         <servlet-name>FacturaControl</servlet-name>
         <servlet-class>control.FacturaControl</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Cliente</servlet-name>
+        <servlet-class>vista.Cliente</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Inicio</servlet-name>
         <url-pattern>/Inicio</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>FacturaControl</servlet-name>
         <url-pattern>/FacturaControl</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Cliente</servlet-name>
+        <url-pattern>/Cliente</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

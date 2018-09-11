@@ -5,24 +5,22 @@
  */
 package vista;
 
+import cad.ClienteCad;
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import modelo.Clientes;
-import cad.ClienteCad;
 
 /**
  *
- * @author barrot
+ * @author mrm96
  */
+public class Cliente extends HttpServlet {
 
-@WebServlet("/cliente")
-public class Cliente extends HttpServlet{
-    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -98,16 +96,6 @@ public class Cliente extends HttpServlet{
             request.getRequestDispatcher("WEB-INF/cliente.jsp").forward(request, response);
         }
         
-        
-        
-        
-        
-        
-        
-        
-        //request.getRequestDispatcher("/WEB-INF/cliente.jsp").forward(request, response);
-        
-        
     }
 
     /**
@@ -119,5 +107,5 @@ public class Cliente extends HttpServlet{
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-    
+
 }
