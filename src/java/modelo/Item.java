@@ -11,10 +11,12 @@ package modelo;
  */
 public class Item {
     private Producto producto;
+    private int tamano;
     private int cantidad;
 
-    public Item(Producto producto, int cantidad) {
+    public Item(Producto producto, int tamano, int cantidad) {
         this.producto = producto;
+        this.tamano = tamano;
         this.cantidad = cantidad;
     }
 
@@ -32,6 +34,14 @@ public class Item {
 
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
+    }
+
+    public int getTamano() {
+        return tamano;
+    }
+
+    public void setTamano(int tamano) {
+        this.tamano = tamano;
     }
     
     

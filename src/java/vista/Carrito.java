@@ -39,6 +39,15 @@ public class Carrito extends HttpServlet {
         sesion.setAttribute("pagina", "Carrito");
         request.getRequestDispatcher("WEB-INF/carrito.jsp").forward(request, response);
     }
+    
+    private int yaExisteProducto(int id_producto, int id_tamano, ArrayList<Item> carrito){
+        for (int i = 0; i < carrito.size(); i++) {
+            if(carrito.get(i).getProducto().getId_producto() == id_producto && carrito.get(i).getTamano() == id_tamano){
+                return i;
+            }
+        }
+        return -1;
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -76,14 +85,21 @@ public class Carrito extends HttpServlet {
                 if(sesion.getAttribute("carrito") == null){
                     ArrayList<Item> carrito = new ArrayList<>();
                     p = ProductoCad.consultarProductoConTamano(id_producto, id_tamano);
-                    carrito.add(new Item(p, 1));
+                    carrito.add(new Item(p, id_tamano, 1));
                     sesion.setAttribute("carrito", carrito);
                 }
                 else{
                     ArrayList<Item> carrito = (ArrayList<Item>)sesion.getAttribute("carrito");
                     p = ProductoCad.consultarProductoConTamano(id_producto, id_tamano);
-                    carrito.add(new Item(p, 1));
-                    sesion.setAttribute("carrito", carrito);
+                    int indice=yaExisteProducto(id_producto, id_tamano, carrito);
+                    if(indice == -1){
+                        carrito.add(new Item(p, id_tamano, 1));
+                        sesion.setAttribute("carrito", carrito);
+                    } else{
+                        int cantidad = carrito.get(indice).getCantidad()+1;
+                        carrito.get(indice).setCantidad(cantidad);
+                    }
+                    
                 }
             }
             else{
@@ -91,14 +107,20 @@ public class Carrito extends HttpServlet {
                 if(sesion.getAttribute("carrito") == null){
                     ArrayList<Item> carrito = new ArrayList<>();
                     p = ProductoCad.consultarProductoSinTamano(id_producto);
-                    carrito.add(new Item(p, 1));
+                    carrito.add(new Item(p, 0, 1));
                     sesion.setAttribute("carrito", carrito);
                 }
                 else{
                     ArrayList<Item> carrito = (ArrayList<Item>)sesion.getAttribute("carrito");
                     p = ProductoCad.consultarProductoSinTamano(id_producto);
-                    carrito.add(new Item(p, 1));
-                    sesion.setAttribute("carrito", carrito);
+                    int indice=yaExisteProducto(id_producto, 0, carrito);
+                    if(indice == -1){
+                        carrito.add(new Item(p, 0, 1));
+                        sesion.setAttribute("carrito", carrito);
+                    } else{
+                        int cantidad = carrito.get(indice).getCantidad()+1;
+                        carrito.get(indice).setCantidad(cantidad);
+                    }
                 }
             }
         }
