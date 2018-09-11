@@ -5,13 +5,17 @@
  */
 package control;
 
+import cad.FacturaCad;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import modelo.Factura;
+import modelo.Item;
 
 /**
  *
@@ -62,6 +66,27 @@ public class FacturaControl extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession sesion = request.getSession();
+        if(request.getParameter("pagar") != null && sesion.getAttribute("carrito") != null){
+            ArrayList<Item> carrito = (ArrayList<Item>)sesion.getAttribute("carrito");
+            String nombre = request.getParameter("nombre");
+            double subTotal = 0;
+            double impuestos = 0;
+            double total = 0;
+            sesion.setAttribute("pagina", "Checkout");
+            for (int i = 0; i < carrito.size(); i++) {
+                subTotal = subTotal + carrito.get(i).getProducto().getPrecio() * carrito.get(i).getCantidad();
+            }
+            impuestos = subTotal*0.13;
+            total = subTotal + impuestos;
+            Factura factura = new Factura();
+            factura.setNombre(nombre);
+            factura.setTotal(total);
+            if(FacturaCad.insertarClientes(factura)){
+                carrito.clear();
+                sesion.setAttribute("carrito", carrito);
+            }
+        }
         response.sendRedirect("Inicio");
     }
 
