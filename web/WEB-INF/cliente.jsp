@@ -70,11 +70,8 @@
                                             <input name="contrasena" type="text" class="form-control">
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-danger btn-block btn-round">Register</button>
+                                    <button type="submit" class="btn btn-danger btn-block btn-round">Registrarse</button>
                                 </form>
-                                <div class="forgot">
-                                    <a href="#" class="btn btn-link btn-danger">Forgot password?</a>
-                                </div>
                             </div>
                         </div>
                     </div>

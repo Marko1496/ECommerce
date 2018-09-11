@@ -19,10 +19,10 @@
             <div class="filter"></div>
             <div class="container">
                 <div class="motto text-center">
-                    <h1>Example page</h1>
-                    <h3>Start designing your landing page here.</h3>
+                    <h1>Hemos Creado las Mejores Pizzas</h1>
+                    <h3>¿Que esperas para ordenar la tuya?</h3>
                     <br />
-                    <button type="button" class="btn btn-outline-neutral btn-round">Download</button>
+                    <button type="button" class="btn btn-outline-neutral btn-round"><i class="nc-icon nc-chart-pie-36"></i> Ordenar</button>
                 </div>
             </div>
         </div>
@@ -43,29 +43,26 @@
                                         <div class="carousel-item active">
                                             <img class="img" src="assets/img/pizzas/sl1.jpg" alt="First slide">
                                             <div class="carousel-caption d-none d-md-block">
-                                                <p>Somewhere</p>
                                             </div>
                                         </div>
                                         <div class="carousel-item">
                                             <img class="d-block img-fluid" src="assets/img/pizzas/sl2.jpg" alt="Second slide">
                                             <div class="carousel-caption d-none d-md-block">
-                                                <p>Somewhere else</p>
                                             </div>
                                         </div>
                                         <div class="carousel-item">
                                             <img class="d-block img" src="assets/img/pizzas/bg6.jpg" alt="Third slide">
                                             <div class="carousel-caption d-none d-md-block">
-                                                <p>Here it is</p>
                                             </div>
                                         </div>
                                     </div>
                                     <a class="left carousel-control carousel-control-prev bg-success" href="#carouselExampleIndicators" role="button" data-slide="prev">
                                         <span class="fa fa-angle-left"></span>
-                                        <span class="sr-only">Previous</span>
+                                        <span class="sr-only">Aterior</span>
                                     </a>
                                     <a class="right carousel-control carousel-control-next bg-success" href="#carouselExampleIndicators" role="button" data-slide="next">
                                         <span class="fa fa-angle-right"></span>
-                                        <span class="sr-only">Next</span>
+                                        <span class="sr-only">Siguiente</span>
                                     </a>
                                 </div>
                             </div>
@@ -82,8 +79,8 @@
                                     <i class="nc-icon nc-album-2"></i>
                                 </div>
                                 <div class="description">
-                                    <h4 class="info-title">Beautiful Gallery</h4>
-                                    <p class="description">Spend your time generating new ideas. You don't have to think of implementing.</p>
+                                    <h4 class="info-title">Calidad</h4>
+                                    <p class="description">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                                     <a href="#pkp" class="btn btn-link btn-danger">See more</a>
                                 </div>
                             </div>
@@ -94,8 +91,8 @@
                                     <i class="nc-icon nc-bulb-63"></i>
                                 </div>
                                 <div class="description">
-                                    <h4 class="info-title">New Ideas</h4>
-                                    <p>Larger, yet dramatically thinner. More powerful, but remarkably power efficient.</p>
+                                    <h4 class="info-title">Innovación</h4>
+                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                                     <a href="#pkp" class="btn btn-link btn-danger">See more</a>
                                 </div>
                             </div>
@@ -106,8 +103,8 @@
                                     <i class="nc-icon nc-chart-bar-32"></i>
                                 </div>
                                 <div class="description">
-                                    <h4 class="info-title">Statistics</h4>
-                                    <p>Choose from a veriety of many colors resembling sugar paper pastels.</p>
+                                    <h4 class="info-title">Rapidez</h4>
+                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                                     <a href="#pkp" class="btn btn-link btn-danger">See more</a>
                                 </div>
                             </div>

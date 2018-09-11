@@ -4,14 +4,14 @@
         <div class="row">
           <nav class="footer-nav">
             <ul>
-              <li><a href="https://www.creative-tim.com">Creative Tim</a></li>
-              <li><a href="http://blog.creative-tim.com">Blog</a></li>
-              <li><a href="https://www.creative-tim.com/license">Licenses</a></li>
+              <li><a href="Inicio"><img src="assets/img/pizzas/pizzeria.png" style="width:25px; height:25px" alt="...">Pizzeria</a></li>
+              <li><a href="Pizzas"><i class="nc-icon nc-chart-pie-36"></i>Pizzas</a></li>
+              <li><a href="Bebidas"><i class="fa fa-beer"></i>Bebidas</a></li>
             </ul>
           </nav>
           <div class="credits ml-auto">
             <span class="copyright">
-                © <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by Creative Tim
+                © <script>document.write(new Date().getFullYear())</script>,<img src="assets/img/pizzas/pizzeria.png" style="width:75px; height:75px" alt="..."> 
             </span>
           </div>
         </div>

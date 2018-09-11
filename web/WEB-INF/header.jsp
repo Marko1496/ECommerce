@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="">
     <div class="container">
         <div class="navbar-translate">
-            <a class="navbar-brand" href="Inicio">Pizzeria</a>
+            <a class="navbar-brand" href="Inicio"><img src="assets/img/pizzas/pizzeria.png" style="width:25px; height:25px" alt="...">Pizzeria</a>
             <button class="navbar-toggler navbar-toggler-right navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-bar"></span>
                 <span class="navbar-toggler-bar"></span>

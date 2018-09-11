@@ -21,7 +21,7 @@
             <div class="col-md-12">
                 <div class="card bg-transparent">
                     <div class="card-header">
-                        <h1 class="text-info"><i class="nc-icon nc-cart-simple"></i>Carrito</h1>
+                        <h2 class="text-info"><i class="nc-icon nc-cart-simple"></i>Carrito</h2>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -61,20 +61,20 @@
                         </div>
 
                         <%impuestos = subTotal * 0.13;
-                        total = subTotal + impuestos;%>
+                            total = subTotal + impuestos;%>
                         <div class="row">
                             <div class="col align-self-start"></div>
                             <div class="col align-self-center"></div>
                             <div class="col align-self-end">
-                            <h4 class="text-primary">Subtotal:<span class="text-muted"> ₡<%=subTotal%></span></h4>
-                        <h4 class="text-primary">IVA (%13):<span class="text-muted"> ₡<%=impuestos%></span></h4>
-                        <h3 class="text-primary">Total:<span class="text-muted"> ₡<%=total%></span></h3>
-                        <a class="btn btn-round btn-info" href="Inicio">Seguir Comprando</a>
-                        <a class="btn btn-round btn-info" href="Checkout">Pagar</a>
+                                <h4 class="text-primary">Subtotal:<span class="text-muted"> ₡<%=subTotal%></span></h4>
+                                <h4 class="text-primary">IVA (%13):<span class="text-muted"> ₡<%=impuestos%></span></h4>
+                                <h3 class="text-primary">Total:<span class="text-muted"> ₡<%=total%></span></h3>
+                                <a class="btn btn-round btn-info" href="Inicio">Seguir Comprando</a>
+                                <a class="btn btn-round btn-info" href="Checkout">Pagar</a>
+                            </div>
                         </div>
-                        </div>
-                        
-                        
+
+
                         <% } else { %>
                         <div>
                             <h1 class="text-danger">No has agregado ningun producto al carrito</h1>
@@ -92,6 +92,7 @@
                 </div>
             </div>
         </div>
+        <%@include file="footer.jsp" %>
 
     </body>
     <%@include file="js.jsp" %>
