@@ -12,55 +12,96 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <%@include file="css.jsp"%>
     </head>
-    <body>
-        <% if(session.getAttribute("carrito")!= null){
-            int subTotal = 0;
-            double impuestos = 0;
-            double total = 0;
-            ArrayList<Item> listaItems = (ArrayList<Item>)session.getAttribute("carrito");
+    <body class="section-dark">
+        <%@include file="header.jsp"%>
+        <% if (session.getAttribute("carrito") != null) {
+                int subTotal = 0;
+                double impuestos = 0;
+                double total = 0;
+                ArrayList<Item> listaItems = (ArrayList<Item>) session.getAttribute("carrito");
         %>
-        <table>
-            <thead>
-                <tr>
-                    <td>ID</td>
-                    <td>Nombre</td>
-                    <td>Cantidad</td>
-                    <td>Precio Unitario</td>
-                    <td>Subtotal</td>
-                </tr>
-            </thead>
-            <tbody>
-            <%for (int i = 0; i < listaItems.size(); i++) {
-            subTotal = subTotal + listaItems.get(i).getCantidad() * listaItems.get(i).getProducto().getPrecio();%>
-                <tr>
-                    <td><%=listaItems.get(i).getProducto().getId_producto()%></td>
-                    <td><%=listaItems.get(i).getProducto().getNombre()%></td>
-                    <td><%=listaItems.get(i).getCantidad()%></td>
-                    <td><%=listaItems.get(i).getProducto().getPrecio()%></td>
-                    <td><%=listaItems.get(i).getCantidad()*listaItems.get(i).getProducto().getPrecio()%></td>
-                </tr>
-            <%}
-            impuestos = subTotal*0.13;
-            total = subTotal + impuestos;%>
-            </tbody>
-        </table>
-        <h4>Subtotal: ₡<%=subTotal%></h4>
-        <h4>IVA (%13): ₡<%=impuestos%></h4>
-        <h3>Total: ₡<%=total%></h3>
-        <form method="POST" action="FacturaControl">
-            <label>Nombre en la Tarjeta</label>
-            <input type="text" name="nombre" />
-            <label>Numero de Tarjeta</label>
-            <input type="text" name="numero_tarjeta" />
-            <label>Codigo de Seguridad</label>
-            <input type="text" name="codigo_seguridad" />
-            <label>Fecha de Vencimiento</label>
-            <input type="text" name="fecha_vencimiento" />
-            <label>Direccion</label>
-            <input type="text" name="direccion" />
-            <input type="submit" name="pagar" value="pagar" />
-        </form>
+
+        <div class="section section-dark">
+            <div class="col-md-12">
+                <div class="card bg-transparent">
+                    <div class="card-header"><h2 class="text-primary"><i class="nc-icon nc-bullet-list-67"></i> Confirmar Orden</h2></div>
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <td class="text-center text-white">ID</td>
+                                    <td class="text-center text-white">Nombre</td>
+                                    <td class="text-center text-white">Cantidad</td>
+                                    <td class="text-center text-white">Precio Unitario</td>
+                                    <td class="text-center text-white">Subtotal</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%for (int i = 0; i < listaItems.size(); i++) {
+                                        subTotal = subTotal + listaItems.get(i).getCantidad() * listaItems.get(i).getProducto().getPrecio();%>
+                                <tr>
+                                    <td class="text-center"><h4 class="text-primary"><%=listaItems.get(i).getProducto().getId_producto()%></h4></td>
+                                    <td class="text-center"><h4 class="text-primary"><%=listaItems.get(i).getProducto().getNombre()%></h4></td>
+                                    <td class="text-center"><h4 class="text-primary"><%=listaItems.get(i).getCantidad()%></h4></td>
+                                    <td class="text-center"><h4 class="text-primary"><%=listaItems.get(i).getProducto().getPrecio()%></h4></td>
+                                    <td class="text-center"><h4 class="text-primary"><%=listaItems.get(i).getCantidad() * listaItems.get(i).getProducto().getPrecio()%></h4></td>
+                                </tr>
+                                <%}
+                                    impuestos = subTotal * 0.13;
+                                    total = subTotal + impuestos;%>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section section-dark container">
+            <div class="row">
+                <div class="col-md-6">
+                    <form method="POST" action="FacturaControl">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label class="text-white">Nombre en la Tarjeta</label>
+                                <input class="form-control" type="text" name="nombre" />
+                            </div>
+                            <div class="col-md-3">
+                                <label class="text-white">Numero de Tarjeta</label>
+                                <input class="form-control" type="text" name="numero_tarjeta" />
+                            </div>
+                            <div class="col-md-3">
+                                <label class="text-white">Codigo de Seguridad</label>
+                                <input class="form-control" type="text" name="codigo_seguridad" />
+                            </div>
+                            <div class="col-md-3">
+                                <label class="text-white">Fecha de Vencimiento</label>
+                                <input class="form-control" type="text" name="fecha_vencimiento" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <label class="text-white">Direccion</label>
+                                <input class="form-control" type="text" name="direccion" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <input class="btn btn-round btn-info" type="submit" name="pagar" value="pagar" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6 offset-md-6">
+                    <h4 class="text-primary">Subtotal:<span class="text-white" class="text-muted">₡<%=subTotal%></span> </h4>
+                    <h4 class="text-primary">IVA (%13):<span class="text-white" class="text-muted">₡<%=impuestos%></span></h4>
+                    <h3 class="text-primary">Total:<span class="text-white" class="text-muted">₡<%=total%></span></h3>
+                </div>
+            </div>
+        </div>
+
         <% }%>
+        <%@include file="footer.jsp"%>
     </body>
+    <%@include file="js.jsp"%>
 </html>

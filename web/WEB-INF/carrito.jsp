@@ -17,9 +17,9 @@
     <body>
         <%@include file="header.jsp"%>
 
-        <div class="section">
+        <div class="section section-dark">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card bg-transparent">
                     <div class="card-header">
                         <h1 class="text-info"><i class="nc-icon nc-cart-simple"></i>Carrito</h1>
                     </div>
@@ -28,11 +28,11 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th class="text-center">Imagen</th>
-                                        <th class="text-center">Poducto</th>
-                                        <th class="text-center">Cantidad</th>
-                                        <th class="text-center">Precio</th>
-                                        <th class="text-center">Acción</th>
+                                        <th class="text-center text-white">Imagen</th>
+                                        <th class="text-center text-white">Poducto</th>
+                                        <th class="text-center text-white">Cantidad</th>
+                                        <th class="text-center text-white">Precio</th>
+                                        <th class="text-center text-white">Acción</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -52,7 +52,7 @@
                                         </td>
                                         <td class="text-center"><h4 class="text-primary"><%=listaItems.get(i).getProducto().getNombre()%></h4></td>
                                         <td class="text-center"><input class="form-control" type="number" value="<%=listaItems.get(i).getCantidad()%>" /></td>
-                                        <td class="text-center"><h3>Precio: ₡<%=listaItems.get(i).getProducto().getPrecio() * listaItems.get(i).getCantidad()%></h3></td>
+                                        <td class="text-center"><h3 class="text-primary">Precio: ₡<%=listaItems.get(i).getProducto().getPrecio() * listaItems.get(i).getCantidad()%></h3></td>
                                         <td class="text-center"><a class="btn btn-icon btn-danger" href="?accion=borrar&id_producto=<%=listaItems.get(i).getProducto().getId_producto()%>&id_tamano=<%=listaItems.get(i).getTamano()%>"><i class="nc-icon nc-simple-remove "></i> Borrar</a></td>
                                     </tr>
                                     <% }%>
