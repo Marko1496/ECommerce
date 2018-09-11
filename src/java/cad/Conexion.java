@@ -19,7 +19,7 @@ public class Conexion {
     public static Connection conectar(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            return DriverManager.getConnection("jdbc:mysql://localhost:3306/proyecto_db", "root", "");
+            return DriverManager.getConnection("jdbc:mysql://localhost:3306/proyecto_db", "root", "root");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {

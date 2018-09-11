@@ -37,6 +37,8 @@
             <h4>Subtotal: ₡<%=subTotal%></h4>
             <h4>IVA (%13): ₡<%=impuestos%></h4>
             <h3>Total: ₡<%=total%></h3>
+            <a href="Inicio">Seguir Comprando</a>
+            <a href="Checkout">Pagar</a>
             <% }else { %>
             <div style="border: 1px solid black;">
                 <h1>No has agregado ningun producto al carrito</h1>

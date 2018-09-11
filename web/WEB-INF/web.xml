@@ -17,8 +17,12 @@
         <servlet-class>vista.Carrito</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Cliente</servlet-name>
-        <servlet-class>vista.Cliente</servlet-class>
+        <servlet-name>Checkout</servlet-name>
+        <servlet-class>vista.Checkout</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FacturaControl</servlet-name>
+        <servlet-class>control.FacturaControl</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Inicio</servlet-name>
@@ -37,8 +41,12 @@
         <url-pattern>/Carrito</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>Cliente</servlet-name>
-        <url-pattern>/Cliente</url-pattern>
+        <servlet-name>Checkout</servlet-name>
+        <url-pattern>/Checkout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FacturaControl</servlet-name>
+        <url-pattern>/FacturaControl</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
