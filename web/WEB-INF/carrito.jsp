@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Carrito</title>
         <%@include file="css.jsp"%>
     </head>
     <body>
@@ -92,8 +92,6 @@
                 </div>
             </div>
         </div>
-        <%@include file="footer.jsp" %>
-
     </body>
     <%@include file="js.jsp" %>
 </html>

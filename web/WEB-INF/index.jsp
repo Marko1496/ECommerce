@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Inicio</title>
         <%@include file="css.jsp" %>
     </head>
     <body>
@@ -81,7 +81,6 @@
                                 <div class="description">
                                     <h4 class="info-title">Calidad</h4>
                                     <p class="description">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    <a href="#pkp" class="btn btn-link btn-danger">See more</a>
                                 </div>
                             </div>
                         </div>
@@ -93,7 +92,6 @@
                                 <div class="description">
                                     <h4 class="info-title">Innovación</h4>
                                     <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    <a href="#pkp" class="btn btn-link btn-danger">See more</a>
                                 </div>
                             </div>
                         </div>
@@ -105,7 +103,6 @@
                                 <div class="description">
                                     <h4 class="info-title">Rapidez</h4>
                                     <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    <a href="#pkp" class="btn btn-link btn-danger">See more</a>
                                 </div>
                             </div>
                         </div>
