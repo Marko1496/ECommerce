@@ -24,12 +24,7 @@
             <!-- content come here     -->
             <div class="section section-dark text-center">
                 <div class="container">
-                    <% if (session.getAttribute("cat_prod").toString() == "1") {%>
-
-                    <h2 class="title">Nuestras Creaciones</h2> 
-                    <%} else {%>
-                    <h2 class="title">El mejor Acompañante</h2>
-                    <% }%>      
+                    <h2 class="title">${sessionScope.pagina}</h2> 
                     <div class="row">
                         <% ArrayList<Producto> lista = ProductoCad.listarProductos(session.getAttribute("cat_prod").toString()); %>
                         <% for (int i = 0; i < lista.size(); i++) {
@@ -48,15 +43,10 @@
                                         <div class="author">
                                             <h4 class="card-title"><%=lista.get(i).getNombre()%></h4>
                                             <% if (session.getAttribute("cat_prod").toString() == "1") {%>
-                                            <h6 class="card-category">Ingredientes</h6>
+                                            <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-title="Ingredientes" data-content="<%=lista.get(i).getDescripcion()%>">Ingredientes</button>
                                             <% }%> 
                                         </div>
                                     </a>
-                                    <% if (session.getAttribute("cat_prod").toString() == "1") {%>
-                                    <p class="card-description text-center">
-                                        <%=lista.get(i).getDescripcion()%>
-                                    </p>
-                                    <% }%> 
                                 </div>
                                 <h4 id="precio-<%=i%>-label" class="card-title"></h4>
 
