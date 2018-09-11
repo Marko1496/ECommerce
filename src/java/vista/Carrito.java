@@ -37,6 +37,18 @@ public class Carrito extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession sesion = request.getSession();
         sesion.setAttribute("pagina", "Carrito");
+        
+        if(request.getParameter("accion") != null){
+            String a = request.getParameter("accion");
+            int id_producto = Integer.parseInt(request.getParameter("id_producto"));
+            int id_tamano = Integer.parseInt(request.getParameter("id_tamano"));
+            if(a.equals("borrar") && sesion.getAttribute("carrito") != null){
+                ArrayList<Item> carrito = (ArrayList<Item>)sesion.getAttribute("carrito");
+                int indice=yaExisteProducto(id_producto, id_tamano, carrito);
+                carrito.remove(indice);
+                sesion.setAttribute("carrito", carrito);
+            }
+        }
         request.getRequestDispatcher("WEB-INF/carrito.jsp").forward(request, response);
     }
     
@@ -76,8 +88,7 @@ public class Carrito extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession sesion = request.getSession();
-        if(request.getParameter("ordenar") != null){
-            
+        if(request.getParameter("ordenar") != null){            
             int id_producto = Integer.parseInt(request.getParameter("producto"));
             if(request.getParameter("tamano") != null){
                 int id_tamano = Integer.parseInt(request.getParameter("tamano"));
