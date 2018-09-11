@@ -55,7 +55,13 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <a href="Cliente" class="nav-link"><i class="nc-icon nc-cart-simple"></i>Registrarse</a>
+                <div class="left-side">
+                    <a href="Cliente" class="btn btn-default btn-link"><i class="nc-icon nc-cart-simple"></i> Registrarse</a>
+                </div>
+                <div class="divider"></div>
+                <div class="right-side">
+                    <a href="" class="btn btn-default btn-link">Ingresar</a>
+                </div>
             </div>
         </div>
     </div>
