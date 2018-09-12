@@ -67,7 +67,7 @@
                                 <input class="form-control" type="text" name="nombre" <% if(session.getAttribute("cliente") != null){%> value="${sessionScope.cliente.getNombre()}" <%}%>/>
                             </div>
                             <div class="col-md-3">
-                                <label class="text-white">Numero de Tarjeta</label>
+                                <label class="text-white">Numero de la Tarjeta</label>
                                 <input class="form-control" type="text" name="numero_tarjeta" <% if(session.getAttribute("cliente") != null){%> value="${sessionScope.cliente.getNumero_tarjeta()}" <%}%>/>
                             </div>
                             <div class="col-md-3">

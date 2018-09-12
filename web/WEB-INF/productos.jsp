@@ -85,10 +85,13 @@
             for (var i = 0; i < inputs.length; i++) {
                 console.log(inputs[i].getAttribute("label"));
                 var label = document.getElementById(inputs[i].getAttribute("label"));
+                console.log(label.id);
                 if (inputs[i].nodeName === "SELECT") {
                     label.innerHTML = "Precio: ₡ " + inputs[i].options[inputs[i].selectedIndex].getAttribute("precio");
+                    console.log(inputs[i].id);
                     inputs[i].onchange = function () {
-                        label.innerHTML = "Precio: ₡ " + this.options[this.selectedIndex].getAttribute("precio");
+                        console.log(label.id);
+                        document.getElementById(this.getAttribute("label")).innerHTML = "Precio: ₡ " + this.options[this.selectedIndex].getAttribute("precio");
                     };
                 } else {
                     label.innerHTML = "Precio: ₡ " + inputs[i].getAttribute("precio");

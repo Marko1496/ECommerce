@@ -51,7 +51,7 @@
                                             </div>
                                         </td>
                                         <td class="text-center"><h4 class="text-primary"><%=listaItems.get(i).getProducto().getNombre()%></h4></td>
-                                        <td class="text-center"><input class="form-control" type="number" value="<%=listaItems.get(i).getCantidad()%>" /></td>
+                                        <td class="text-center"><h4><%=listaItems.get(i).getCantidad()%></h4></td>
                                         <td class="text-center"><h3 class="text-primary">Precio: ₡<%=listaItems.get(i).getProducto().getPrecio() * listaItems.get(i).getCantidad()%></h3></td>
                                         <td class="text-center"><a class="btn btn-icon btn-danger" href="?accion=borrar&id_producto=<%=listaItems.get(i).getProducto().getId_producto()%>&id_tamano=<%=listaItems.get(i).getTamano()%>"><i class="nc-icon nc-simple-remove "></i> Borrar</a></td>
                                     </tr>
