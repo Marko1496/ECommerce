@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vista;
+package control;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author mrm96
  */
-public class Pizzas extends HttpServlet {
+public class Inicio extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,9 +32,8 @@ public class Pizzas extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession sesion = request.getSession();
-        sesion.setAttribute("pagina", "Pizzas");
-        sesion.setAttribute("cat_prod", "1");
-        request.getRequestDispatcher("WEB-INF/productos.jsp").forward(request, response);
+        sesion.setAttribute("pagina", "Inicio");
+        request.getRequestDispatcher("WEB-INF/index.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
