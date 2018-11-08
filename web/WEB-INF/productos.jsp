@@ -27,7 +27,7 @@
             <!-- content come here     -->
             <div class="section section-dark text-center">
                 <div class="container">
-                    <h2 class="title">${sessionScope.pagina}</h2> 
+                    <h1 class="title">${sessionScope.pagina}</h1> 
                     <div class="row">
                         <% ArrayList<Producto> lista = ProductoCad.listarProductos(session.getAttribute("cat_prod").toString()); %>
                         <% for (int i = 0; i < lista.size(); i++) {
