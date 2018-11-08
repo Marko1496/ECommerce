@@ -14,6 +14,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="icon" type="image/png" href="assets/img/pizzas/pizzeria.png">
+        <link rel="apple-touch-icon" sizes="86x86" href="assets/img/pizzas/pizzeria.png">
         <title>PIZZERIA</title>
         <%@include file="css.jsp" %>
     </head>
