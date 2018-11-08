@@ -75,9 +75,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="footer register-footer text-center">
-                        <h6>&copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by Creative Tim</h6>
-                    </div>
+
                 </div>
             </div>
         </div>

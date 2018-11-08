@@ -2,23 +2,23 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
         <servlet-name>Inicio</servlet-name>
-        <servlet-class>vista.Inicio</servlet-class>
+        <servlet-class>control.Inicio</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Pizzas</servlet-name>
-        <servlet-class>vista.Pizzas</servlet-class>
+        <servlet-class>control.Pizzas</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Bebidas</servlet-name>
-        <servlet-class>vista.Bebidas</servlet-class>
+        <servlet-class>control.Bebidas</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Carrito</servlet-name>
-        <servlet-class>vista.Carrito</servlet-class>
+        <servlet-class>control.Carrito</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Checkout</servlet-name>
-        <servlet-class>vista.Checkout</servlet-class>
+        <servlet-class>control.Checkout</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>FacturaControl</servlet-name>
@@ -26,11 +26,11 @@
     </servlet>
     <servlet>
         <servlet-name>Cliente</servlet-name>
-        <servlet-class>vista.Cliente</servlet-class>
+        <servlet-class>control.Cliente</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>SesionCliente</servlet-name>
-        <servlet-class>vista.SesionCliente</servlet-class>
+        <servlet-class>control.SesionCliente</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Inicio</servlet-name>

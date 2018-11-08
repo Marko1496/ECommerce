@@ -21,7 +21,7 @@
             <div class="col-md-12">
                 <div class="card bg-transparent">
                     <div class="card-header">
-                        <h2 class="text-info"><i class="nc-icon nc-cart-simple"></i>Carrito</h2>
+                        <h2 class="text-info"><i class="nc-icon nc-cart-simple"></i>  Carrito</h2>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -47,11 +47,11 @@
                                     <tr>
                                         <td>
                                             <div class="card-avatar">
-                                                <a><img class="img-thumbnail" style="width:50px; height:50px" src="assets/img/pizzas/<%=listaItems.get(i).getProducto().getImagen()%>" alt="..."></a>
+                                                <a><img class="img-thumbnail" style="width:50px; height:50px" src="assets/img/pizzas/<%=listaItems.get(i).getProducto().getImagen()%>" alt="<%=listaItems.get(i).getProducto().getNombre()%>"></a>
                                             </div>
                                         </td>
                                         <td class="text-center"><h4 class="text-primary"><%=listaItems.get(i).getProducto().getNombre()%></h4></td>
-                                        <td class="text-center"><h4><%=listaItems.get(i).getCantidad()%></h4></td>
+                                        <td class="text-center"><h4 class="text-primary"><%=listaItems.get(i).getCantidad()%></h4></td>
                                         <td class="text-center"><h3 class="text-primary">Precio: ₡<%=listaItems.get(i).getProducto().getPrecio() * listaItems.get(i).getCantidad()%></h3></td>
                                         <td class="text-center"><a class="btn btn-icon btn-danger" href="?accion=borrar&id_producto=<%=listaItems.get(i).getProducto().getId_producto()%>&id_tamano=<%=listaItems.get(i).getTamano()%>"><i class="nc-icon nc-simple-remove "></i> Borrar</a></td>
                                     </tr>

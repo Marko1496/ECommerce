@@ -35,10 +35,10 @@
                             <div class="card card-profile card-plain">
                                 <% if (session.getAttribute("cat_prod").toString() == "1") {%>
                                 <div class="card-avatar">
-                                    <a href="#avatar"><img src="assets/img/pizzas/<%= lista.get(i).getImagen()%>" alt="..."></a>
+                                    <a href="#avatar"><img src="assets/img/pizzas/<%= lista.get(i).getImagen()%>" alt="<%=lista.get(i).getNombre()%>"></a>
                                 </div>
                                 <% } else {%> 
-                                <a href="#avatar"><img class="img-thumbnail" style="width:150px; height:150px" src="assets/img/pizzas/<%= lista.get(i).getImagen()%>" alt="..."></a>
+                                <a href="#avatar"><img class="img-thumbnail" style="width:150px; height:150px" src="assets/img/pizzas/<%= lista.get(i).getImagen()%>" alt="<%=lista.get(i).getNombre()%>"></a>
                                 <% }%> 
                                 <div class="card-body">
                                     <a>
