@@ -16,7 +16,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="icon" type="image/png" href="assets/img/pizzas/pizzeria.png">
         <link rel="apple-touch-icon" sizes="86x86" href="assets/img/pizzas/pizzeria.png">
-        <title>PIZZERIA</title>
+        <title>Poruductos</title>
+        <meta name="description" content="Somos una empresa costarricense apasionada por la buena comida, creamos las mejores peizzas utilizando siempre productos frescos y de calidad.">
         <%@include file="css.jsp" %>
     </head>
     <body>

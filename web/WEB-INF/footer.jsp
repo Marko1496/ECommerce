@@ -11,7 +11,7 @@
           </nav>
           <div class="credits ml-auto">
             <span class="copyright">
-                © <script>document.write(new Date().getFullYear())</script>,<img src="assets/img/pizzas/pizzeria.png" style="width:75px; height:75px" alt="..."> 
+                © <script>document.write(new Date().getFullYear())</script>,<img src="assets/img/pizzas/pizzeria.png" style="width:75px; height:75px" alt="Logo Pizzeria"> 
             </span>
           </div>
         </div>

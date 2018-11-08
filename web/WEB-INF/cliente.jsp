@@ -9,7 +9,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Registro Clientes</title>
+        <meta name="description" content="Somos una empresa costarricense apasionada por la buena comida, creamos las mejores peizzas utilizando siempre productos frescos y de calidad.">
         <%@include file="css.jsp" %>
     </head>
     <body>
